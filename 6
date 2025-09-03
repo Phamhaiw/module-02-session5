@@ -1,0 +1,35 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Nhap mat khau can kiem tra:");
+        String password = scanner.nextLine();
+
+        if(isPasswordValid(password)){
+            System.out.println("Mat khau hop le.");
+        } else {
+            System.out.println("Mat khau khong hop le.");
+            System.out.println("Mat khau phai co:");
+            System.out.println("- It nhat 8 ky tu.");
+            System.out.println("- It nhat mot chu cai viet hoa.");
+            System.out.println("- It nhat mot chu cai viet thuong.");
+            System.out.println("- It nhat mot ky tu so.");
+            System.out.println("- It nhat mot ky tu dac biet (@, $, !, %, *, ?, &, ...).");
+        }
+    }
+    public static boolean isPasswordValid(String password) {
+        final String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[@$!%*?&])[A-Za-z\\\\d@$!%*?&]{8,}$";
+        return  Pattern.matches(regex, password);
+    }
+}
+
+
+
