@@ -1,0 +1,29 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập email vào:");
+        String input = sc.nextLine();
+        if (isEmailValid(input)){
+            System.out.println("Email hợp lệ");
+        } else {
+            System.out.println("Email không hợp lệ");
+        }
+
+    }
+
+    public static boolean isEmailValid(String email){
+        final String regex = "^[a-zA-Z0-9_.]+@[a-zA-Z0-9.]+\\\\.[a-zA-Z]{2,6}$";
+        boolean rs = Pattern.matches(regex,email);
+        return rs;
+
+    }
+}
+
