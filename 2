@@ -1,0 +1,25 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String originalString = "Hello, Java World!";
+        System.out.println("Chuỗi ban đầu: " + originalString);
+
+       StringBuilder sb = new StringBuilder(originalString);
+       sb.delete(5,10);
+       String chuoiXoa = sb.toString();
+       System.out.println("Chuỗi sau khi xóa: " + chuoiXoa);
+
+       String chuoiMOi = originalString.replace("World", "Universe");
+       System.out.println("Chuỗi sau khi xóa là: " + chuoiMOi);
+
+    }
+}
+
