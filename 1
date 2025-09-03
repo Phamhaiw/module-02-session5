@@ -1,0 +1,28 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nhập 1 chuỗi văn bản:");
+        String vanBan = sc.nextLine();
+
+        System.out.println("Nhập từ cần tìm:");
+        String tuCanTim = sc.nextLine();
+
+        int viTri = vanBan.indexOf(tuCanTim);
+        if (viTri != -1) {
+            System.out.println("Tu '" + tuCanTim + "' xuat hien tai vi tri dau tien: " + viTri);
+        } else {
+            System.out.println("Tu '" + tuCanTim + "' khong xuat hien trong chuoi.");
+        }
+
+    }
+}
+
